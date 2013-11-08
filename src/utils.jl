@@ -77,3 +77,7 @@ function MatrixMode(mode::Integer)
     ccall( (:glMatrixMode, lib),Void, (GLenum,), mode)
 end
 
+function LoadIdentity()
+    ccall( (:glLoadIdentity,lib), Void, ())
+end
+
