@@ -81,3 +81,8 @@ function LoadIdentity()
     ccall( (:glLoadIdentity,lib), Void, ())
 end
 
+function Ortho(xmin::Float16, xmax::Float16, ymin::Float16,ymax::Float16, zmin::Float16, zmax::Float16)
+    ccall( (:glOrtho, lib),Void, (GLfloat, GLfloat, GLfloat, GLfloat, GLfloat, GLfloat),
+          xmin,xmax,ymin,ymax,zmin,zmax)
+  end
+
