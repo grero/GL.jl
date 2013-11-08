@@ -86,3 +86,10 @@ function Ortho(xmin::Float16, xmax::Float16, ymin::Float16,ymax::Float16, zmin::
           xmin,xmax,ymin,ymax,zmin,zmax)
   end
 
+function Begin(mode::Integer)
+    ccall( (:glBegin, lib),Void, (GLenum,), mode)
+end
+
+function End()
+    ccall( (:glEnd, lib), Void, ())
+end
