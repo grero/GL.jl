@@ -22,3 +22,15 @@ end
 DrawElements{T}(mode::Integer, indices::Array{T}) =
 	DrawElements(mode, length(indices), GLtype[T], convert(Ptr{T}, indices))
 
+   
+function Color3f(r::Float16, g::Float16, b::Float16)
+    ccall((:glColor3f, lib), Void, 
+    (GLfloat, GLfloat, GLfloat), r,g,b)
+
+end
+
+function Vertex3f(x::Float16, y::Float16, z::Float16)
+    ccall((:glVertex3f, lib), Void, 
+    (GLfloat, GLfloat, GLfloat), x,y,z)
+
+end
