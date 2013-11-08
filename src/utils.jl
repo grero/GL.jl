@@ -69,3 +69,11 @@ function Viewport(width::Integer, height::Integer)
 		0, 0, width, height)
 end
 
+#MatrixMode
+const MODELVIEW                      = 0x1700
+const PROJECTION                     = 0x1701
+
+function MatrixMode(mode::Integer)
+    ccall( (:glMatrixMode, lib),Void, (GLenum,), mode)
+end
+
