@@ -39,3 +39,8 @@ function Translatef(x::Float16, y::Float16, z::Float16)
     ccall( (:glTranslatef, lib), Void,
     (GLfloat, GLfloat, GLfloat), x,y,z)
 end
+
+function Rotatef(angle::Float16, x::Float16, y::Float16, z::Float16)
+    ccall( (:glRotatef,lib), Void, 
+        (GLfloat, GLfloat, GLfloat,GLfloat), angle, x,y,z)
+end
